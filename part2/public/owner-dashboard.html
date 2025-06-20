@@ -150,9 +150,9 @@
           loadWalks();
         });
         onMounted(() => {
-          loadMyDogs();   // 加载用户的狗狗
-  loadWalks();    // 加载 walk 请求
-});
+          loadMyDogs();
+          loadWalks();
+        });
 
         return {
           form,
@@ -160,7 +160,8 @@
           message,
           error,
           submitWalkRequest,
-          logout
+          logout,
+          dogs
         };
       }
     }).mount('#app');
