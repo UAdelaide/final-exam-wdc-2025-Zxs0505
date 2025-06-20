@@ -67,7 +67,30 @@
 
   <script>
     const { createApp, ref, onMounted } = Vue;
+    createApp({
+      setup() {
+        const walks = ref([]);
+        const message = ref('');
+        const error = ref('');
+        const user = 3;
 
+        const logout = () => {
+          fetch('/api/logout', {
+            method: 'POST',
+            credentials: 'include'
+          })
+          .then(res => {
+            if (res.ok) {
+              window.location.href = 'index.html';
+            } else {
+              alert('Logout failed');
+            }
+          })
+          .catch(err => {
+            console.error(err);
+            alert('Network error during logout');
+          });
+        };
     createApp({
       setup() {
         const form = ref({
