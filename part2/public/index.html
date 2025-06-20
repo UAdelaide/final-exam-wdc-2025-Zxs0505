@@ -58,11 +58,13 @@
               })
             });
 
+            const result = await res.json();
+
             if (res.ok) {
               const result = await res.json();
               if (result.user.role === 'owner') {
                 window.location.href = 'owner-dashboard.html';
-              } else if (json.user.role === 'walker') {
+              } else if (result.user.role === 'walker') {
                 window.location.href = 'walker-dashboard.html';
               } else {
                 alert('Unknown role');
