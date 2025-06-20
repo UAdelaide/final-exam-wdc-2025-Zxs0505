@@ -56,7 +56,6 @@
           const result = await res.json();
 
           if (res.ok) {
-            // 根据角色跳转
             if (result.role === 'owner') {
             window.location.href = 'owner-dashboard.html';
             } else if (result.role === 'walker') {
@@ -66,9 +65,9 @@
             alert(result.error || 'Login failed');
           }
         }
-    }
-  }).mount('#app');
-</script>
+      }
+    }).mount('#app');
+  </script>
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
