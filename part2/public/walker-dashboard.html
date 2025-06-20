@@ -44,7 +44,7 @@
         const walks = ref([]);
         const message = ref('');
         const error = ref('');
-        
+
 
         const logout = () => {
           fetch('/api/logout', {
@@ -63,6 +63,20 @@
             alert('Network error during logout');
           });
         };
+
+        async function getCurrentUser() {
+          try {
+            const res = await fetch('/api/users/me', {
+              method: 'GET',
+              credentials: 'include'
+            });
+            if (!res.ok) throw new Error('Failed to fetch user');
+            return await res.json();
+          } catch (err) {
+            console.error(err);
+            return null;
+          }
+        }
 
 
         async function loadWalkRequests() {
