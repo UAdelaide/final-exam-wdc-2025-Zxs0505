@@ -177,9 +177,9 @@ function downvote(index) {
 function login(){
 
     let user = {
-        user: document.getElementById('username').value,
-        pass: document.getElementById('password').value
-    };
+        email: document.getElementById('username').value,
+    password: document.getElementById('password').value
+};
 
     // Create AJAX Request
     var xmlhttp = new XMLHttpRequest();
