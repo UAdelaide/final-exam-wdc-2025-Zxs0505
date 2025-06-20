@@ -178,8 +178,8 @@ function login(){
 
     let user = {
         email: document.getElementById('username').value,
-    password: document.getElementById('password').value
-};
+        password: document.getElementById('password').value
+    };
 
     // Create AJAX Request
     var xmlhttp = new XMLHttpRequest();
