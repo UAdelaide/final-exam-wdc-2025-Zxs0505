@@ -80,6 +80,21 @@
         const walks = ref([]);
         const message = ref('');
         const error = ref('');
+        async function logout() {
+          try {
+            const res = await fetch('/api/users/logout', {
+          method: 'POST',
+          credentials: 'include'
+        });
+        if (res.ok) {
+          window.location.href = 'index.html';
+        } else {
+          alert('Logout failed');
+        }
+      } catch (err) {
+        alert('Network error during logout');
+      }
+    }
 
         async function loadWalks() {
           try {
