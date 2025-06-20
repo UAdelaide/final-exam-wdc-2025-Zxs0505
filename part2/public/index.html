@@ -56,12 +56,13 @@
     const { createApp } = Vue;
 
     createApp({
-      data(dogs: []) {
+      data() {
         return {
           message: 'Welcome to the Dog Walking Service!',
           dogImage: '',
           username: '',
           password: ''
+          dogs: []
         };
       },
       methods: {
