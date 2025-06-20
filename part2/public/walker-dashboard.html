@@ -90,6 +90,11 @@
         }
 
         async function applyToWalk(requestId) {
+          const currentUser = await getCurrentUser();
+          if (!currentUser || !currentUser.id) {
+            alert('Not logged in');
+            return;
+          }
           try {
             const res = await fetch(`/api/walks/${requestId}/apply`, {
               method: 'POST',
