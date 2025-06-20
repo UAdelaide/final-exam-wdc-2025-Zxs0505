@@ -61,6 +61,5 @@ router.post('/login', async (req, res) => {
   }
 });
 
-console.log("User role:", rows[0].role);
 
 module.exports = router;
