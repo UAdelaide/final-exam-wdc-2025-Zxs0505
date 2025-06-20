@@ -57,21 +57,21 @@
 
           if (res.status === 200) {
             const result = await res.json();
-          // 根据角色跳转
-          if (result.role === 'owner') {
-            window.location.href = 'owner-dashboard.html';
-          } else if (result.role === 'walker') {
-            window.location.href = 'walker-dashboard.html';
+            // 根据角色跳转
+            if (result.role === 'owner') {
+              window.location.href = 'owner-dashboard.html';
+            } else if (result.role === 'walker') {
+              window.location.href = 'walker-dashboard.html';
+            }
+          } else {
+            alert('Invalid credentials');
           }
-        } else {
-          alert('Invalid credentials');
+        } catch (err) {
+          console.error(err);
+          alert('Login failed');
         }
-      } catch (err) {
-        console.error(err);
-        alert('Login failed');
       }
     }
-  }
     }).mount('#app');
   </script>
 
