@@ -10,7 +10,7 @@ const walkRoutes = require('./routes/walkRoutes');
 const app = express();
 const PORT = 3000;
 
-app.use(cors({origin: 'http://localhost:3000', credentials: true}));
+app.use(cors({}));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
