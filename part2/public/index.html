@@ -100,13 +100,21 @@
       },
       async mounted() {
         try {
-          const res = await fetch('https://dog.ceo/api/breeds/image/random');
-          const data = await res.json();
-          this.dogImage = data.message;
-        } catch (err) {
-          console.error('Failed to fetch dog image:', err);
-        }
-      }
+          const res = await fetch('/api/dogs/all');
+          const dogs = await res.json();
+
+          for (const dog of dogs) {
+            const imgRes = await fetch('https://dog.ceo/api/breeds/image/random');
+            const imgData = await imgRes.json();
+            dog.image = imgData.message; // 添加 image 字段
+          }
+
+          this.dogs = dogs;
+  } catch (err) {
+    console.error('Failed to load dogs:', err);
+  }
+}
+
     }).mount('#app');
   </script>
 
