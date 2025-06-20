@@ -64,7 +64,8 @@
           } else {
             alert('Invalid credentials');
           }
-
+        } catch (err) {
+          
           const result = await res.json();
 
           if (res.ok) {
