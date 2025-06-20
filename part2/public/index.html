@@ -13,14 +13,14 @@
     <h1 class="mb-4 text-primary">{{ message }}</h1>
     <p class="lead">Connect with trusted walkers for your beloved dog!</p>
 
-    <!-- 登录表单 -->
+
     <div class="mb-3">
       <input v-model="username" type="text" class="form-control mb-2" placeholder="Username">
       <input v-model="password" type="password" class="form-control mb-2" placeholder="Password">
       <button @click="login" class="btn btn-dark">Log In</button>
     </div>
 
-    <!-- 狗狗图片 -->
+
     <div class="card mb-3" style="width: 18rem;">
       <img :src="dogImage" class="card-img-top" alt="Random Dog" style="height: 200px; object-fit: cover;">
       <div class="card-body">
