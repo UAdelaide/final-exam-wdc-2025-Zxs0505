@@ -30,7 +30,7 @@ let db;
     db = await mysql.createConnection({
       host: 'localhost',
       user: 'root',
-      password: 'Nishi12345678',
+      password: '',
       database: 'DogWalkService'
     });
 
