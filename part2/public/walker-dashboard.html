@@ -48,22 +48,22 @@
 
       // ✅ 正确放在 setup 中的 logout 函数
         const logout = () => {
-        fetch('/api/users/logout', {
-          method: 'POST',
-          credentials: 'include'
-        })
-        .then(res => {
-          if (res.ok) {
-            window.location.href = 'index.html'; // 返回登录页
-          } else {
-            alert('Logout failed');
-          }
-        })
-        .catch(err => {
-          console.error(err);
-          alert('Network error during logout');
-        });
-      };
+          fetch('/api/users/logout', {
+            method: 'POST',
+            credentials: 'include'
+          })
+          .then(res => {
+            if (res.ok) {
+              window.location.href = 'index.html'; // 返回登录页
+            } else {
+              alert('Logout failed');
+            }
+          })
+          .catch(err => {
+            console.error(err);
+            alert('Network error during logout');
+          });
+        };
 
 
         async function loadWalkRequests() {
