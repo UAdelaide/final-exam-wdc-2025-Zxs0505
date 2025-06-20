@@ -20,6 +20,26 @@
       <button @click="login" class="btn btn-dark">Log In</button>
     </div>
 
+    <div id="dog-table" class="container">
+      <h2 class="mt-5">All Dogs</h2>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Photo</th>
+            <th>Name</th>
+            <th>Size</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="dog in dogs" :key="dog.dog_id">
+            <td><img :src="dog.photo" width="100" /></td>
+            <td>{{ dog.name }}</td>
+            <td>{{ dog.size }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
 
     <div class="card mb-3" style="width: 18rem;">
       <img :src="dogImage" class="card-img-top" alt="Random Dog" style="height: 200px; object-fit: cover;">
