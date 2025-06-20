@@ -3,6 +3,14 @@ const path = require('path');
 require('dotenv').config();
 
 const app = express();
+const session = require('express-session');
+
+app.use(session({
+  secret: 'your-secret-key',
+  resave: false,
+  saveUninitialized: false,
+}));
+
 
 // Middleware
 app.use(express.json());
