@@ -62,6 +62,9 @@ let db;
 // Route to return dogs and owners
 app.get('/api/dogs', async (req, res) => {
   try {
+    if (!db) {
+      return res.status(500).json({ error: 'Database not initialized yet' });
+    }
     const [rows] = await db.execute(`
       SELECT d.name AS dog_name, d.size, u.username AS owner_username
       FROM Dogs d
@@ -69,9 +72,11 @@ app.get('/api/dogs', async (req, res) => {
     `);
     res.json(rows);
   } catch (err) {
+    console.error("🐶 /api/dogs error:", err);
     res.status(500).json({ error: 'Failed to fetch dogs' });
   }
 });
+
 
 // Route to return open walk requests
 app.get('/api/walkrequests/open', async (req, res) => {
