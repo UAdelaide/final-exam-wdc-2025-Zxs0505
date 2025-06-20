@@ -8,7 +8,7 @@ const userRoutes = require('./routes/userRoutes');
 const walkRoutes = require('./routes/walkRoutes');
 
 const app = express();
-const PORT = 3000;
+const PORT = 8080;
 
 app.use(cors());
 app.use(bodyParser.json());
