@@ -49,17 +49,26 @@ router.post('/login', async (req, res) => {
       return res.status(401).json({ error: 'Invalid credentials' });
     }
 
-    req.session.user = {
+    const role = rows[0].role?.toLowerCase().trim();
+
+    if (role !== 'owner' && role !== 'walker') {
+      return res.status(401).json({ error: 'Unknown role' });
+    }
+
+    const userData = {
       id: rows[0].user_id,
       username: rows[0].username,
-      role: rows[0].role
+      role: role
     };
 
-    res.json({ message: 'Login successful', user: rows[0] });
+    req.session.user = userData;
+
+    res.json({ message: 'Login successful', user: userData });
   } catch (error) {
     res.status(500).json({ error: 'Login failed' });
   }
 });
+
 
 
 module.exports = router;
