@@ -43,29 +43,29 @@
       methods: {
         async login() {
           const res = await fetch('/api/login', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            username: this.username,
-            password: this.password
-          })
-        });
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+              username: this.username,
+              password: this.password
+            })
+          });
 
-        const result = await res.json();
+          const result = await res.json();
 
-        if (res.ok) {
-          // 根据角色跳转
-          if (result.role === 'owner') {
+          if (res.ok) {
+            // 根据角色跳转
+            if (result.role === 'owner') {
             window.location.href = 'owner-dashboard.html';
-          } else if (result.role === 'walker') {
-            window.location.href = 'walker-dashboard.html';
+            } else if (result.role === 'walker') {
+              window.location.href = 'walker-dashboard.html';
+            }
+          } else {
+            alert(result.error || 'Login failed');
           }
-        } else {
-          alert(result.error || 'Login failed');
         }
-      }
     }
   }).mount('#app');
 </script>
