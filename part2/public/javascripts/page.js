@@ -209,6 +209,10 @@ function logout(){
     // Open connection to server & send the post data using a POST request
     xmlhttp.open("POST", "http://localhost:8080/api/users/logout", true);
     xmlhttp.withCredentials = true;
+    xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            window.location.href = "index.html";
+        
     xmlhttp.send();
 
 }
