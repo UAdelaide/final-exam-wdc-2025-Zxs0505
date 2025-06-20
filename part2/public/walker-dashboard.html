@@ -38,8 +38,7 @@
 
   <script>
     const { createApp, ref, onMounted } = Vue;
-    <script>
-  function logout() {
+      function logout() {
     fetch('/api/users/logout', {
       method: 'POST',
       credentials: 'include'
@@ -56,8 +55,6 @@
       alert('Network error during logout');
     });
   }
-</script>
-
 
     createApp({
       setup() {
