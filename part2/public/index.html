@@ -17,6 +17,10 @@
     <input v-model="username" placeholder="Username" />
     <input v-model="password" type="password" placeholder="Password" />
     <button @click="login">Log In</button>
+    <div>
+      <img :src="dogImage" alt="Random Dog" style="width: 200px;">
+      <p>Dog of the day - press F12 for hidden fact!</p>
+    </div>
   </div>
 
     <div class="card mb-3" style="width: 18rem;">
