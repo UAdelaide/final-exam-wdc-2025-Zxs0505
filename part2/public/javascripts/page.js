@@ -215,5 +215,4 @@ function logout(){
         }
     };
     xmlhttp.send();
-
 }
