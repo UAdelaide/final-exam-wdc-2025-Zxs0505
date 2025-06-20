@@ -48,7 +48,7 @@
 
       // ✅ 正确放在 setup 中的 logout 函数
         const logout = () => {
-          fetch('http://localhost:8080/api/users/logout', {
+          fetch('/api/users/logout', {
             method: 'POST',
             credentials: 'include'
           })
