@@ -58,7 +58,7 @@ router.post('/login', async (req, res) => {
     const userData = {
       id: rows[0].user_id,
       username: rows[0].username,
-      role: role
+      role: rows[0].role
     };
 
     req.session.user = userData;
