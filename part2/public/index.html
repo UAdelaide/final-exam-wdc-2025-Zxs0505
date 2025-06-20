@@ -9,11 +9,11 @@
 </head>
 <body class="bg-light">
 
-<div id="app" class="container py-5">
-  <h1 class="mb-4 text-primary">{{ message }}</h1>
-  <p class="lead">Connect with trusted walkers for your beloved dog!</p>
+  <div id="app" class="container py-5">
+    <h1 class="mb-4 text-primary">{{ message }}</h1>
+    <p class="lead">Connect with trusted walkers for your beloved dog!</p>
 
-  <!-- Dog of the Day 图像展示区域 -->
+    <!-- Dog of the Day 图像展示区域 -->
   <div class="card mb-3" style="width: 18rem;">
     <img :src="dogImage" class="card-img-top" alt="Random Dog" style="height: 200px; object-fit: cover;">
     <div class="card-body">
@@ -46,7 +46,6 @@
     }
   }).mount('#app');
 </script>
-
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
