@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const path = require('path');
 
 const userRoutes = require('./routes/userRoutes');
-const walkRoutes = require('./walkRoutes');
+const walkRoutes = require('./routes/walkRoutes');
 
 const app = express();
 const PORT = 3000;
