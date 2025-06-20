@@ -54,6 +54,8 @@
               password: this.password
             })
           });
+          if (res.status === 200) {
+            const result = await res.json();
 
           const result = await res.json();
 
