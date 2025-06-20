@@ -10,12 +10,11 @@ const walkRoutes = require('./walkRoutes');
 const app = express();
 const PORT = 3000;
 
-// 中间件
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Session 配置
+
 app.use(session({
   secret: 'mySecretKey',
   resave: false,
