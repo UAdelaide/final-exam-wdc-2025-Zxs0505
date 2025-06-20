@@ -44,17 +44,18 @@
         credentials: 'include'
       })
       .then(res => {
-      if (res.ok) {
-        window.location.href = 'index.html'; // 回到登录页
-      } else {
-        alert('Logout failed');
-      }
-    })
-    .catch(err => {
-      console.error(err);
-      alert('Network error during logout');
-    });
-  }
+        if (res.ok) {
+          window.location.href = 'index.html'; // 回到登录页
+        } else {
+          alert('Logout failed');
+        }
+      })
+      .catch(err => {
+        console.error(err);
+        alert('Network error during logout');
+      });
+    }
+    const { createApp, ref, onMounted } = Vue;
 
     createApp({
       setup() {
