@@ -149,6 +149,10 @@
         onMounted(() => {
           loadWalks();
         });
+        onMounted(() => {
+          loadMyDogs();   // 加载用户的狗狗
+  loadWalks();    // 加载 walk 请求
+});
 
         return {
           form,
