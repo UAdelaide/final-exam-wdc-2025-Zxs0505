@@ -81,6 +81,10 @@ app.get('/api/dogs', async (req, res) => {
 // Route to return open walk requests
 app.get('/api/walkrequests/open', async (req, res) => {
   try {
+    if (!db) {
+      return res.status(500).json({ error: 'Database not initialized yet' });
+}
+
     const [rows] = await db.execute(`
       SELECT wr.request_id, d.name AS dog_name, wr.requested_time, wr.duration_minutes, wr.location, u.username AS owner_username
       FROM WalkRequests wr
