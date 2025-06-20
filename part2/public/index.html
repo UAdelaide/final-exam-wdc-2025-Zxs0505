@@ -55,26 +55,23 @@
             })
           });
 
-          const result = await res.json();
-
-          if (res.ok) {
-            if (result.role === 'owner') {
+          if (res.status === 200) {
+            const result = await res.json();
+          // 根据角色跳转
+          if (result.role === 'owner') {
             window.location.href = 'owner-dashboard.html';
-            } else if (result.role === 'walker') {
-              window.location.href = 'walker-dashboard.html';
-            }
-          } else {
-            alert(result.error || 'Login failed');
+          } else if (result.role === 'walker') {
+            window.location.href = 'walker-dashboard.html';
           }
+        } else {
+          alert('Invalid credentials');
         }
-      },
-      mounted() {
-        fetch('https://dog.ceo/api/breeds/image/random')
-          .then(res => res.json())
-          .then(data => {
-            this.dogImage = data.message;
-          });
+      } catch (err) {
+        console.error(err);
+        alert('Login failed');
       }
+    }
+  }
     }).mount('#app');
   </script>
 
