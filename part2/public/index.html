@@ -60,7 +60,6 @@
 
             const result = await res.json();
             if (res.ok) {
-              const result = await res.json();
               if (result.user.role === 'owner') {
                 window.location.href = 'owner-dashboard.html';
               } else if (result.user.role === 'walker') {
