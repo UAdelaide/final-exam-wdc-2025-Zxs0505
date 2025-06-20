@@ -106,14 +106,14 @@
           for (const dog of dogs) {
             const imgRes = await fetch('https://dog.ceo/api/breeds/image/random');
             const imgData = await imgRes.json();
-            dog.image = imgData.message; // 添加 image 字段
+            dog.image = imgData.message;
           }
 
           this.dogs = dogs;
-  } catch (err) {
-    console.error('Failed to load dogs:', err);
-  }
-}
+        } catch (err) {
+          console.error('Failed to load dogs:', err);
+        }
+      }
 
     }).mount('#app');
   </script>
